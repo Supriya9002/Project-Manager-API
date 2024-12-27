@@ -1,4 +1,4 @@
-import UserController from "./User.Controller.js";
+import UserController from "./User.controller.js";
 import express from "express";
 import jwtAuth from "../../middleware/JwtAuth.js";
 
