@@ -169,7 +169,7 @@ This will provide you with a comprehensive view of all the available endpoints, 
 
 ## Deployment
 
-You can deploy this application on platforms like [Render](https://render.com) for a live demo.
+You can deploy this application on platforms like [Render](https://project-manager-api-2.onrender.com) for a live demo.
 
 
 ## Technologies
