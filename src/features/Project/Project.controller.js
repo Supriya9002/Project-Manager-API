@@ -21,10 +21,10 @@ export default class ProjectController{
 
             await project.save();
             console.log(project);
-            res.status(201).json({ message: "Project Added", Project: project });
+            res.status(201).json({status: true, message: "Project Added", data: project });
         } catch (err) {
             console.log(err);
-            res.status(500).json({ message: "Internal Server Error" });
+            res.status(500).json({status: false, message: "Internal Server Error" });
         }
     }
 
@@ -46,13 +46,13 @@ export default class ProjectController{
             // console.log("query", query);
             const allProject = await ProjectModel.find(query);
             if (allProject.length === 0) {
-                return res.status(200).json({ message: "No Projects Found" });
+                return res.status(200).json({status: false, message: "No Projects Found" });
             }
             // return projects
-            return res.status(200).json({ message: "All Projects", Projects: allProject });
+            return res.status(200).json({status: true, message: "Get all Projects", data: allProject });
         } catch (err) {
             console.log(err);
-            res.status(500).json({ message: "Internal Server Error" });
+            res.status(500).json({status: false, message: "Internal Server Error" });
         }
     }
     
@@ -63,12 +63,12 @@ export default class ProjectController{
             // console.log("ProjectID", ProjectID);
             const project = await ProjectModel.findOne({_id: ProjectID, userID: req.userID});
             if(!project){
-                return res.status(401).json({message: "Project Not Found"})
+                return res.status(404).json({status: false, message: "Project Not Found"})
             }
-            return res.status(200).json({message: "Get Project Succesfull", Project: project});
+            return res.status(200).json({status: true ,message: "Get Project Succesfull", data: project});
         }catch(err){
             console.log(err);
-            res.status(500).json({message: "Internal Server Error"});
+            res.status(500).json({status: false, message: "Internal Server Error"});
         }
     }
 }
