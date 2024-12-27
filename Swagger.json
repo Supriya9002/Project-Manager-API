@@ -1,0 +1,317 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Project Manager API",
+      "description": "API documentation for the Project Manager application"
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/users/signup": {
+        "post": {
+          "summary": "Sign up a new user",
+          "description": "Create a new user account",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/UserSignup"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "User created successfully"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/users/login": {
+        "post": {
+          "summary": "Log in a user",
+          "description": "Authenticate a user and return a JWT token",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/UserLogin"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User logged in successfully"
+            },
+            "401": {
+              "description": "Invalid credentials"
+            }
+          }
+        }
+      },
+      "/users/logOut": {
+        "get": {
+          "summary": "Log out a user",
+          "description": "Log out the current user by removing the session token",
+          "parameters": [],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User logged out successfully"
+            },
+            "401": {
+              "description": "Unauthorized - No token provided or invalid token"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/users/AllLogOut": {
+        "get": {
+          "summary": "Log out all sessions for a user",
+          "description": "Log out all sessions for the currently authenticated user",
+          "parameters": [],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "All sessions logged out successfully"
+            },
+            "401": {
+              "description": "Unauthorized - No token provided or invalid token"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/query/storeQuery": {
+        "post": {
+          "summary": "Store a user query",
+          "description": "Store a query submitted by the user",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Query"
+              }
+            }
+          ],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Query added successfully"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/project/createProject": {
+        "post": {
+          "summary": "Create a new project",
+          "description": "Add a new project to the system",
+          "parameters": [
+            {
+              "name": "body",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Project"
+              }
+            }
+          ],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Project created successfully"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/project/getAllProject": {
+        "get": {
+          "summary": "Get all projects",
+          "description": "Fetch all projects of the authenticated user",
+          "parameters": [
+            {
+              "name": "startDate",
+              "in": "query",
+              "type": "string",
+              "format": "date",
+              "description": "Filter projects by start date"
+            },
+            {
+              "name": "endDate",
+              "in": "query",
+              "type": "string",
+              "format": "date",
+              "description": "Filter projects by end date"
+            }
+          ],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "All projects retrieved successfully"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/project/getProjectByID/{ProjectID}": {
+        "get": {
+          "summary": "Get project by ID",
+          "description": "Fetch a specific project by its ID",
+          "parameters": [
+            {
+              "name": "ProjectID",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "description": "The ID of the project to retrieve"
+            }
+          ],
+          "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Project retrieved successfully"
+            },
+            "401": {
+              "description": "Unauthorized or project not found"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "UserSignup": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 3
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "UserLogin": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "Query": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Project": {
+        "type": "object",
+        "properties": {
+          "userID": {
+            "type": "string",
+            "description": "The ID of the user creating the project"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the project",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "description": "A detailed description of the project",
+            "minLength": 20
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The start date of the project"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The end date of the project"
+          }
+        },
+        "required": ["userID", "name", "description", "startDate", "endDate"]
+      }
+    },
+    "securityDefinitions": {
+      "bearerAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "JWT Authorization header using the Bearer scheme."
+      }
+    }
+  }
+  
