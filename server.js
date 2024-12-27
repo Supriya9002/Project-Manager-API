@@ -1,7 +1,6 @@
 import "./env.js";
 import express from "express";
 import ConnectUsingMongoose from "./src/config/db.js";
-// import userRoute from "./src/features/user/User.Routes.js";
 import userRoute from "./src/features/user/User.routes.js"
 import projectRoute from "./src/features/Project/Project.routes.js";
 import QueryRouter from "./src/features/queries/query.routes.js";
