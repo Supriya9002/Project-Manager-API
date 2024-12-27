@@ -21,45 +21,36 @@ This is a backend API for managing user authentication, project management, and 
 ### Prerequisites
 
 - Node.js
-- MySQL (or any relational database of your choice)
+- MySQL
 
 ### Steps
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/<your-username>/projectmanagerapi.git
+    git clone https://github.com/Supriya9002/projectmanagerapi.git 
     ```
 
-2. Navigate to the project folder:
-    ```bash
-    cd projectmanagerapi
-    ```
 
-3. Install the dependencies:
+
+2. Install the dependencies:
     ```bash
     npm install
     ```
 
-4. Create a `.env` file in the root directory and add the following variables:
+3. Create a `.env` file in the root directory and add the following variables:
     ```env
-    DB_HOST=localhost
-    DB_USER=root
-    DB_PASSWORD=password
-    DB_NAME=project_manager
+    DB_URL= your_database
     JWT_SECRET=your-jwt-secret
-    PORT=3000
+    Port=3000
     ```
 
-5. Set up the MySQL database and tables as described in the database setup section.
+4. Set up the MySQL database and tables as described in the database setup section.
 
 ## Environment Variables
 
-- `DB_HOST`: The host of your database (e.g., `localhost`).
-- `DB_USER`: Your MySQL username.
-- `DB_PASSWORD`: Your MySQL password.
-- `DB_NAME`: The name of the database to use.
+- `DB_URL`: The host of your database (e.g., `localhost`).
 - `JWT_SECRET`: A secret key for signing JWT tokens.
-- `PORT`: The port to run the application on (default is 3000).
+- `Port`: The port to run the application on (default is 3000).
 
 ## Running the Application
 
