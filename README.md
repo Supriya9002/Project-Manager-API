@@ -222,7 +222,7 @@ The server will start on `http://localhost:3000`.
 
 ## Testing with Postman
 
-You can test all the API endpoints using Postman by importing the provided Postman collection. [Postman](https://cloudy-desert-66836.postman.co/workspace/Supriya-Haldar~3aa99702-245f-47d7-9b5d-5844a41c4096/collection/30849931-dc8d373c-ee11-4de6-97b8-1088a898d5aa?action=share&creator=30849931)
+You can test all the API endpoints using Postman by importing the provided Postman collection. [Postman](https://cloudy-desert-66836.postman.co/workspace/Supriya-Haldar~3aa99702-245f-47d7-9b5d-5844a41c4096/collection/30849931-44aff414-0eb6-4a52-bbde-2a3061ba756d?action=share&creator=30849931)
 
 ### Swagger Documentation
 
