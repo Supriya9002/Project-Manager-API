@@ -14,7 +14,6 @@ This is a backend API for managing user authentication, project management, and 
 - [Testing with Postman](#testing-with-postman)
 - [Deployment](#deployment-optional)
 - [Technologies](#technologies)
-- [License](#license)
 
 ## Installation
 
@@ -181,6 +180,3 @@ You can deploy this application on platforms like [Render](https://render.com) f
 - **API Documentation**: Swagger
 - **Miscellaneous**: bcrypt, dotenv, mongoose
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
