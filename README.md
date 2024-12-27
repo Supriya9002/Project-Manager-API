@@ -12,7 +12,7 @@ This is a backend API for managing user authentication, project management, and 
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Testing with Postman](#testing-with-postman)
-- [Deployment (Optional)](#deployment-optional)
+- [Deployment](#deployment-optional)
 - [Technologies](#technologies)
 - [License](#license)
 
