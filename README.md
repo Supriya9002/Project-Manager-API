@@ -29,8 +29,6 @@ This is a backend API for managing user authentication, project management, and 
     git clone https://github.com/Supriya9002/Project-Manager-API
     ```
 
-
-
 2. Install the dependencies:
     ```bash
     npm install
@@ -78,7 +76,13 @@ The server will start on `http://localhost:3000`.
    - **Response**: 
      ```json
      {
-       "message": "User created successfully"
+       "status": true,
+       "message": "SignUp Successful",
+       "data": {
+         "name": "John Doe",
+         "email": "john@example.com",
+         "_id": "user-id"
+       }
      }
      ```
 
@@ -94,15 +98,31 @@ The server will start on `http://localhost:3000`.
    - **Response**: 
      ```json
      {
-       "token": "jwt-token-here"
+       "status": true,
+       "message": "Token Created",
+       "data": "jwt-token-here"
      }
      ```
 
 3. **GET** `/api/users/logOut`
    - Log out the user by removing the session token.
+   - **Response**: 
+     ```json
+     {
+       "status": true,
+       "message": "Account Logout Successful"
+     }
+     ```
 
 4. **GET** `/api/users/AllLogOut`
    - Log out all sessions for a user.
+   - **Response**: 
+     ```json
+     {
+       "status": true,
+       "message": "All Account Logout Successful"
+     }
+     ```
 
 ### Project Management
 
@@ -121,7 +141,16 @@ The server will start on `http://localhost:3000`.
    - **Response**: 
      ```json
      {
-       "message": "Project created successfully"
+       "status": true,
+       "message": "Project Added",
+       "data": {
+         "_id": "project-id",
+         "userID": "user-id",
+         "name": "Project Title",
+         "description": "Detailed project description.",
+         "startDate": "2024-01-01",
+         "endDate": "2024-12-31"
+       }
      }
      ```
 
@@ -130,9 +159,41 @@ The server will start on `http://localhost:3000`.
    - **Query Parameters**:
      - `startDate`: Filter projects by start date.
      - `endDate`: Filter projects by end date.
-
+   - **Response**: 
+     ```json
+     {
+       "status": true,
+       "message": "Get all Projects",
+       "data": [
+         {
+           "_id": "project-id",
+           "userID": "user-id",
+           "name": "Project Title",
+           "description": "Detailed project description.",
+           "startDate": "2024-01-01",
+           "endDate": "2024-12-31"
+         }
+       ]
+     }
+     ```
+   
 3. **GET** `/api/project/getProjectByID/{ProjectID}`
    - Fetch a specific project by its ID.
+   - **Response**: 
+     ```json
+     {
+       "status": true,
+       "message": "Get Project Successful",
+       "data": {
+         "_id": "project-id",
+         "userID": "user-id",
+         "name": "Project Title",
+         "description": "Detailed project description.",
+         "startDate": "2024-01-01",
+         "endDate": "2024-12-31"
+       }
+     }
+     ```
 
 ### Contact Form
 
@@ -149,7 +210,13 @@ The server will start on `http://localhost:3000`.
    - **Response**: 
      ```json
      {
-       "message": "Query submitted successfully"
+       "status": true,
+       "message": "Query Submitted Successfully",
+       "data": {
+         "name": "Jane Doe",
+         "email": "jane@example.com",
+         "message": "I need more information."
+       }
      }
      ```
 
@@ -171,7 +238,6 @@ This will provide you with a comprehensive view of all the available endpoints, 
 
 You can deploy this application on platforms like [Render](https://project-manager-api-3.onrender.com) for a live demo.
 
-
 ## Technologies
 
 - **Backend Framework**: Node.js, Express
@@ -179,4 +245,4 @@ You can deploy this application on platforms like [Render](https://project-manag
 - **Authentication**: JWT
 - **API Documentation**: Swagger
 - **Miscellaneous**: bcrypt, dotenv, mongoose
-
+```
