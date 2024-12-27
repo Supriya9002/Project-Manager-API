@@ -156,7 +156,7 @@ The server will start on `http://localhost:3000`.
 
 ## Testing with Postman
 
-You can test all the API endpoints using Postman by importing the provided Postman collection.
+You can test all the API endpoints using Postman by importing the provided Postman collection. [Postman](https://cloudy-desert-66836.postman.co/workspace/Supriya-Haldar~3aa99702-245f-47d7-9b5d-5844a41c4096/collection/30849931-dc8d373c-ee11-4de6-97b8-1088a898d5aa?action=share&creator=30849931)
 
 ### Swagger Documentation
 
@@ -168,22 +168,10 @@ http://localhost:3000/api-docs
 
 This will provide you with a comprehensive view of all the available endpoints, their request formats, and response examples.
 
-## Deployment (Optional)
+## Deployment
 
-You can deploy this application on platforms like [Heroku](https://heroku.com) or [Render](https://render.com) for a live demo.
+You can deploy this application on platforms like [Render](https://render.com) for a live demo.
 
-### Deploy to Render
-
-1. Create a new web service on Render.
-2. Connect to your GitHub repository.
-3. Set the environment variables in Render.
-4. Deploy the service.
-
-### Deploy to Heroku
-
-1. Create a new app on Heroku.
-2. Push your code to the Heroku Git repository.
-3. Set the environment variables on Heroku.
 
 ## Technologies
 
@@ -196,6 +184,3 @@ You can deploy this application on platforms like [Heroku](https://heroku.com) o
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-Feel free to replace the placeholder links with your actual GitHub repository and live API URLs. You can also customize the `Technologies` and `License` sections to match your specific setup.
