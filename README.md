@@ -26,7 +26,7 @@ This is a backend API for managing user authentication, project management, and 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Supriya9002/projectmanagerapi.git 
+    git clone https://github.com/Supriya9002/Project-Manager-API
     ```
 
 
