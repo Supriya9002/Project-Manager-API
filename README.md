@@ -245,4 +245,4 @@ You can deploy this application on platforms like [Render](https://project-manag
 - **Authentication**: JWT
 - **API Documentation**: Swagger
 - **Miscellaneous**: bcrypt, dotenv, mongoose
-```
+
